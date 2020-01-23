@@ -85,6 +85,7 @@ router.put('/:id', (req, res) => {
   Schemes.findById(id)
   .then(scheme => {
     if (scheme) {
+      console.log('changes from inside put', changes)
       Schemes.update(changes, id)
       .then(updatedScheme => {
         res.json(updatedScheme);
